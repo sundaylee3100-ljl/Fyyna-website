@@ -26,6 +26,13 @@
 
 html { scroll-behavior: smooth; font-size: 16px; }
 
+/* --- Thin Scrollbar --- */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.2); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(0,0,0,0.35); }
+* { scrollbar-width: thin; scrollbar-color: rgba(0,0,0,0.2) transparent; }
+
 body {
   font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   color: var(--text);
@@ -405,8 +412,9 @@ h3 { font-size: 1.3rem; }
 .product-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
 .product-card-img {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  background: #f0f0f0;
   transition: var(--transition);
 }
 .product-card:hover .product-card-img { transform: scale(1.03); }
